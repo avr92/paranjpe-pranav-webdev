@@ -2,6 +2,86 @@ input.form-control {
     margin-bottom: 5px;
 }
 
+.navbar-default {
+    background-color: #337AB7;
+    border-color: #2E6DA4;
+    color: #fff;
+}
+.navbar-default .navbar-text, .navbar-default .navbar-text  a,.navbar-default .navbar-brand, .navbar-default .navbar-link,
+.navbar-default .navbar-left{
+    color:#fff;
+}
+.white{
+    color: white !important;
+}
+.white .navbar-link .white a {
+    color: white !important;
+}
+
 body {
-    padding-top: 36px;
+    padding-top: 70px;
+    padding-bottom: 40px;
+}
+
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover{
+    color: #fff;
+    background-color: transparent;
+}
+
+.anchorTag,.anchorTagWidth {
+    margin:10px;
+}
+
+.border-right {
+    border-right: 1px solid #cccccc;
+    height: 100%;
+}
+
+.vertical-divider {
+    height: 100%;
+    border-right: 1px solid #cccccc;
+    margin-top: -20px;
+}
+
+.Marginadj {
+    margin-top: 20px;
+}
+
+.widgetMargin{
+    margin-top: 10px;
+
+}
+.headerPosition{
+    position: relative;
+}
+
+.headmargin{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.headmarginapp{
+    margin-top: 0px;
+}
+
+.bgstyle{
+    background-color: white;
+    border-bottom-left-radius: 3px;
+}
+
+.rel-pos{
+    position: relative;
+}
+
+.setpos{
+    position: absolute;
+    margin-top: 0px;
+    padding-right: 0px;
+    height: 25px;
+}
+
+.setpostop{
+    position: absolute;
+    margin-top: 20px;
+    padding-right: 0px;
+    height: 25px;
 }
