@@ -10,26 +10,22 @@
 
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
-
-            <div class="row">
-                <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
-                    <span class="navbar-brand pull-left">Profile</span>
-                </div>
-                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                    <p class="navbar-text pull-right">
-                        <a href="profile.html">
-                            <span class="glyphicon glyphicon-ok"></span>
-                        </a>
-                    </p>
-                </div>
-            </div>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                Profile
+            </a>
+            <p class="navbar-text pull-right">
+                <a href="#" class="navbar-link">
+                    <span class="glyphicon glyphicon-ok">
+                    </span>
+                </a>
+            </p>
+        </div>
     </div>
 </nav>
 
 
 <div class="container">
-   <!-- <h1>Profile</h1>-->
-
     <form>
         <div class="form-group">
             <label for="username">Username</label>
@@ -37,7 +33,7 @@
         </div>
         <div class="form-group">
             <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" placeholder="alice@wonderland.com" required="true">
+            <input type="email" class="form-control" id="email" placeholder="alice@wonderland.com">
         </div>
         <div class="form-group">
             <label for="first-name">First Name</label>
@@ -51,50 +47,22 @@
 
     <a class="btn btn-primary btn-block"
        href="website-list.html">Websites</a>
-    <a class="btn btn-danger  btn-block"
+    <a class="btn btn-danger btn-block"
        href="login.html">Logout</a>
 </div>
 
-<!--
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
-        <div class="row navbar-text">
-            <div class="col-xs-3 text-center">
-                <a href="#">
-                    <span class="glyphicon glyphicon-ok"></span>
-                </a>
-            </div>
-            <div class="col-xs-3 text-center">
-                <a href="#">
-                    <span class="glyphicon glyphicon-plus"></span>
-                </a>
-            </div>
-            <div class="col-xs-3 text-center">
-                <a href="#">
-                    <span class="glyphicon glyphicon-star"></span>
-                </a>
-            </div>
-            <div class="col-xs-3 text-center">
-                <a href="#">
-                    <span class="glyphicon glyphicon-heart"></span>
+        <div class="row navbar-text" style="width: 100%">
+            <div class="col-xs-10 col-sm-11 col-md-11 col-lg-11"></div>
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-center pull-right">
+                <a href="profile.html">
+                    <span class="glyphicon glyphicon-user"></span>
                 </a>
             </div>
         </div>
     </div>
 </nav>
--->
-<nav class="bg-primary navbar navbar-default navbar-fixed-bottom">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-10 col-sm-11 col-md-11 col-lg-11">
-            </div>
-            <div class="col-xs-2 col-sm-1 col-md-1 col-lg-1">
-                <p class="navbar-text pull-right">
-                    <a href="profile.html"><span class="glyphicon glyphicon-user"></span></a>
-                </p>
-            </div>
-        </div>
-    </div>
-</nav>
+
 </body>
 </html>
