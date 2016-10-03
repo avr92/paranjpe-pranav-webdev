@@ -1,0 +1,14 @@
+.navbar-default {
+    background-color: gainsboro;
+    border-color: grey;
+    color: blue;
+}
+.navbar-default .navbar-text, .navbar-default .navbar-text  a,.navbar-default .navbar-brand, .navbar-default,
+.navbar-default .navbar-left{
+    color:black;
+}
+
+.navbar-fixed-bottom
+{
+  color:blue;
+}
