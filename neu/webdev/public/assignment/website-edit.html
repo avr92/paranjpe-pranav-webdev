@@ -10,27 +10,30 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+            <div class="col-md-4 col-lg-4 hidden-xs hidden-sm">
                 <p class="navbar-text pull-left">
                     <a href="website-list.html">
                         <span class="glyphicon glyphicon-chevron-left"></span>
                     </a>
                 </p>
-            </div>
-            <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
                 <span class="navbar-brand pull-left">Websites</span>
             </div>
             <div class="col-md-1 col-lg-1 hidden-xs hidden-sm">
                 <p class="navbar-text pull-right">
-                    <a href="website-list.html">
+                    <a href="website-new.html">
                         <span class="glyphicon glyphicon-plus"></span>
                     </a>
                 </p>
             </div>
             <div class="col-xs-9 col-sm-10 col-md-6 col-lg-6">
-                <span class="navbar-text pull-left">Edit Website</span>
+                <p class="navbar-text pull-left visible-xs visible-sm">
+                    <a href="website-list.html">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                </p>
+                <span class="navbar-brand pull-left">Edit Website</span>
             </div>
-            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 ">
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 pull-right">
                 <p class="navbar-text pull-right">
                     <a href="website-list.html">
                         <span class="glyphicon glyphicon-ok pull-right"></span>
@@ -42,11 +45,11 @@
 </nav>
 
 <div class="container-fluid">
-    <div class="container-fluid col-md-5 col-lg-5 hidden-xs hidden-sm vertical-divider">
+    <div class="container-fluid hidden-xs hidden-sm vertical-divider">
         <div class="Marginadj">
             <div class="row">
-                <div class="col-md-10 col-lg-10">
-                    <a href="#" class="pull-left anchorTag">Blogging App</a>
+                <div class="col-md-5 col-lg-5 hidden-xs hidden-sm">
+                    <a href="page-list.html" class="pull-left anchorTag">Blogging App</a>
                 </div>
                 <div class="col-md-2 col-lg-2">
                     <a href="website-edit.html" class="pull-left anchorTag">
@@ -56,7 +59,7 @@
             </div>
             <div class="row">
                 <div class="col-md-10 col-lg-10">
-                    <a href="#" class="pull-left anchorTag">Address Book App</a>
+                    <a href="page-list.html" class="pull-left anchorTag">Address Book App</a>
                 </div>
                 <div class="col-md-2 col-lg-2">
                     <a href="website-edit.html" class="pull-left anchorTag">
@@ -66,7 +69,7 @@
             </div>
             <div class="row">
                 <div class="col-md-10 col-lg-10">
-                    <a href="#" class="pull-left anchorTag">Script Testing App</a>
+                    <a href="page-list.html" class="pull-left anchorTag">Script Testing App</a>
                 </div>
                 <div class="col-md-2 col-lg-2">
                     <a href="website-edit.html" class="pull-left anchorTag">
@@ -76,7 +79,7 @@
             </div>
             <div class="row">
                 <div class="col-md-10 col-lg-10">
-                    <a href="#" class="pull-left anchorTag">Blogger</a>
+                    <a href="page-list.html" class="pull-left anchorTag">Blogger</a>
                 </div>
                 <div class="col-md-2 col-lg-2">
                     <a href="website-edit.html" class="pull-left anchorTag">
@@ -97,6 +100,8 @@
                 <textarea class="form-control" rows="6" id="sitedescription"
                           placeholder="">Blogger is a blog-publishing service that allows multi-user blogs with time stamped entries.It was developed by Pyra labs ,which was bought by Google in 2003.Generally the blogs are hosted by Google</textarea>
             </div>
+            <a class="btn btn-danger btn-block"
+               href="website-list.html">Delete</a>
         </form>
     </div>
 </div>
@@ -104,15 +109,13 @@
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-            </div>
-            <div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+            <div class="col-md-4 col-lg-4 hidden-xs hidden-sm">
             </div>
             <div class="col-md-1 col-lg-1 hidden-xs hidden-sm">
             </div>
             <div class="col-xs-9 col-sm-10 col-md-6 col-lg-6">
             </div>
-            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 ">
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 pull-right">
                 <p class="navbar-text pull-right">
                     <a href="profile.html"><span class="glyphicon glyphicon-user"></span></a>
                 </p>
