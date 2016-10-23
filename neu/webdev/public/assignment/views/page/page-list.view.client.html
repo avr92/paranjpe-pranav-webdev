@@ -1,0 +1,57 @@
+<div>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+                    <p class="navbar-text pull-left">
+                        <a href="#/user/{{model.user_Id}}/website">
+                            <span class="glyphicon glyphicon-chevron-left "></span>
+                        </a>
+                    </p>
+                    <span class="navbar-brand">Pages</span>
+                </div>
+                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                    <p class="navbar-text pull-right">
+                        <a href="#/user/{{model.user_Id}}/website/{{model.websiteId}}/page/new">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-11 col-sm-12 col-md-12 col-lg-12">
+                    <ul class="list-group">
+                        <li ng-repeat="page in model.pages" class="list-group-item">
+                            <a href="#/user/{{model.user_Id}}/website/{{model.websiteId}}/page/{{page._id}}/widget">
+                                {{page.name}}
+                            </a>
+                            <a href="#/user/{{model.user_Id}}/website/{{website._id}}/page/{{page._id}}" class="pull-right" style="margin-left: 15px;">
+                                <span class="glyphicon glyphicon-cog"></span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="bg-primary navbar navbar-default navbar-fixed-bottom">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-10 col-sm-11 col-md-11 col-lg-11">
+                </div>
+                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                    <p class="navbar-text pull-right">
+                        <a href="profile.html"><span class="glyphicon glyphicon-user"></span></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>

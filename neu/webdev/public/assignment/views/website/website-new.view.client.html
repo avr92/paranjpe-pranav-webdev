@@ -1,0 +1,88 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-lg-4 hidden-xs hidden-sm">
+                <p class="navbar-text pull-left">
+                    <a href="#/user/{{model.user_Id}}/website">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                </p>
+                <span class="navbar-brand pull-left">Websites</span>
+            </div>
+            <div class="col-md-1 col-lg-1 hidden-xs hidden-sm">
+                <p class="navbar-text pull-right">
+                    <a href="#/user/{{model.user_Id}}">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </a>
+                </p>
+            </div>
+            <div class="col-xs-9 col-sm-10 col-md-6 col-lg-6">
+                <p class="navbar-text pull-left visible-xs visible-sm">
+                    <a href="#/website-list">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                </p>
+                <span class="navbar-brand pull-left">New Website</span>
+            </div>
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 pull-right">
+                <p class="navbar-text pull-right">
+                    <a href ng-click="model.websiteCreate(model.website)">
+                        <span class="glyphicon glyphicon-ok pull-right"></span>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="container-fluid col-md-5 col-lg-5 hidden-xs hidden-sm vertical-divider">
+        <div class="Marginadj">
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <ul class="list-group">
+                        <li ng-repeat="website in model.websites" class="list-group-item">
+                            <a href="#/user/{{model.user_Id}}/website/{{website._id}}/page">
+                                {{website.name}}
+                            </a>
+                            <a href="#/user/{{model.user_Id}}/website/{{website._id}}" class="pull-right" style="margin-left: 15px;">
+                                <span class="glyphicon glyphicon-cog"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid col-xs-11 col-sm-12 col-md-7 col-lg-7">
+        <form>
+            <div class="form-group">
+                <label for="sitename">Name</label>
+                <input type="text" ng-model="model.website.name" class="form-control" id="sitename" placeholder="Name" >
+            </div>
+            <div class="form-group">
+                <label for="sitedescription">Description</label>
+                <textarea class="form-control" ng-model="model.website.description" rows="6" id="sitedescription"
+                          placeholder="Description"></textarea>
+            </div>
+        </form>
+    </div>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-lg-4 hidden-xs hidden-sm">
+            </div>
+            <div class="col-md-1 col-lg-1 hidden-xs hidden-sm">
+            </div>
+            <div class="col-xs-9 col-sm-10 col-md-6 col-lg-6">
+            </div>
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 pull-right">
+                <p class="navbar-text pull-right">
+                    <a href="#/profile"><span class="glyphicon glyphicon-user"></span></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</nav>

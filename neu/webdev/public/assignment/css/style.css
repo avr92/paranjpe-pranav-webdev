@@ -1,6 +1,11 @@
 input.form-control {
     margin-bottom: 5px;
 }
+
+.list-group-item{
+    border:#ffffff;
+}
+
 .navbar-header{
     width:100%;
 }

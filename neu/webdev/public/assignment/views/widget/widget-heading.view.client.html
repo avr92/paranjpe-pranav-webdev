@@ -7,7 +7,6 @@
     <meta name="HandheldFriendly" content="true">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/style.css" rel="stylesheet"/>
-
 </head>
 <body>
 <div>
@@ -16,13 +15,15 @@
             <div class="row">
                 <div class="col-xs-10 col-sm-11 col-md-11 col-lg-11">
                     <p class="navbar-text pull-left">
-                        <a href="page-list.html"><span class="glyphicon glyphicon-chevron-left "></span></a>
+                        <a href="#/widget-list">
+                            <span class="glyphicon glyphicon-chevron-left "></span>
+                        </a>
                     </p>
-                    <span class="navbar-brand">New Page</span>
+                    <span class="navbar-brand">Widget Edit</span>
                 </div>
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
                     <p class="navbar-text pull-right">
-                        <a href="page-list.html">
+                        <a href="#/widget-list">
                             <span class="glyphicon glyphicon-ok"></span>
                         </a>
                     </p>
@@ -32,27 +33,33 @@
     </nav>
     <div class="container-fluid">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Page Name">
-                        </div>
-                        <div class="form-group">
-                            <label for="Title">Title</label>
-                            <input type="text" class="form-control" id="Title"
-                                      placeholder="Page Title">
-                        </div>
-                    </form>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <label for="Text">Text</label>
+                    <input type="text" class="form-control" id="Text"
+                           placeholder="" value="US Senate Reaches Compromise on Emergency">
+                </div>
+                <div class="form-group">
+                    <label for="Size">Size</label>
+                    <input type="number" class="form-control" id="Size" placeholder="" value="3">
+                </div>
+                <a class="btn btn-danger  btn-block"
+                   href="#/widget-list">Delete</a>
+            </form>
         </div>
     </div>
-    <nav class="bg-primary navbar navbar-default navbar-fixed-bottom">
+    <nav class="navbar navbar-default navbar-fixed-bottom">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-10 col-sm-11 col-md-11 col-lg-11">
                 </div>
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
                     <p class="navbar-text pull-right">
-                        <a href="profile.html"><span class="glyphicon glyphicon-user"></span></a>
+                        <a href="#/profile"><span class="glyphicon glyphicon-user"></span></a>
                     </p>
                 </div>
             </div>
