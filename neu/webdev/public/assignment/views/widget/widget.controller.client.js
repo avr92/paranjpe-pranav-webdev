@@ -57,11 +57,15 @@
         vm.website_Id=$routeParams.wgid;
         vm.widget_Id=$routeParams.wgid;
         vm.page_Id=$routeParams.pid;
+        vm.createYouTubeWid={"widgetType":"YOUTUBE","pageId":vm.page_Id,"width":"","url":""};
+        vm.createHeaderWid={"widgetType":"YOUTUBE","pageId":vm.page_Id,"width":"","url":""};
+        vm.createImageWid={"widgetType":"YOUTUBE","pageId":vm.page_Id,"width":"","url":""};
+        vm.createWidget=createWidget;
 
         function createWidget(newWidgetType){
             var wid={};
-            w.widgetType=newWidgetType;
-            var newWidget=WidgetService.createWidget(vm.pid,wid);
+            //w.widgetType=newWidgetType;
+            var newWidget=WidgetService.createWidget(vm.page_Id,w.newWidgetType);
 
             if(newWidget){
                 $location.url("/user/"+vm.user_Id+"/website/"+vm.wid+"/page/"+vm.pid+"/widget/"+vm.wgid);
