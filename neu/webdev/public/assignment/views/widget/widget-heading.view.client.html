@@ -23,7 +23,7 @@
     </nav>
     <div class="container-fluid">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <form>
+
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" class="form-control" id="name" placeholder="Name">
@@ -32,10 +32,11 @@
                            placeholder="">
                     <label for="Size">Size</label>
                     <input type="number" ng-model="model.widget.size" class="form-control" id="Size" placeholder="Size">
+                    <a class="btn btn-danger btn-block"
+                       ng-click="model.deleteWidget()">Delete</a>
                 </div>
-                <a class="btn btn-danger btn-block"
-                   href ng-click="model.deleteWidget()">Delete</a>
-            </form>
+
+
         </div>
     </div>
     <nav class="navbar navbar-default navbar-fixed-bottom">
