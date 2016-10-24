@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-    <meta name="HandheldFriendly" content="true">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/style.css" rel="stylesheet"/>
-</head>
-<body>
+
 <div>
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-11 col-sm-12 col-md-12 col-lg-12">
                     <p class="navbar-text pull-left">
-                        <a href="#/widget-list">
+                        <a href="#/user/{{model.user_Id}}">
                             <span class="glyphicon glyphicon-chevron-left "></span>
                         </a>
                     </p>
@@ -32,52 +22,52 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-11 col-sm-12 col-md-12 col-lg-12">
-                    <a href="#/widget-heading" class="pull-left anchorTag">Header </a>
+                    <a href ng-click="model.createWidget('HEADER)" class="pull-left anchorTag">Header </a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-11 col-sm-12 col-md-12 col-lg-12">
-                    <a href="#/page-list" class="pull-left anchorTag">Label</a>
+                    <p class="pull-left anchorTag">Label</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-11 col-sm-12 col-md-12 col-lg-12">
-                    <a href="#/page-list" class="pull-left anchorTag">HTML</a>
+                    <p class="pull-left anchorTag">HTML</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-11 col-sm-12 col-md-12 col-lg-12">
-                    <a href="#/page-list" class="pull-left anchorTag">Text Input</a>
+                    <p class="pull-left anchorTag">Text Input</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-11 col-sm-12 col-md-12 col-lg-12">
-                    <a href="#/page-list" class="pull-left anchorTag">Link</a>
+                    <p" class="pull-left anchorTag">Link</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-11 col-sm-12 col-md-12 col-lg-12">
-                    <a href="#/page-list" class="pull-left anchorTag">Button</a>
+                    <p class="pull-left anchorTag">Button</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-11 col-sm-12 col-md-12 col-lg-12">
-                    <a href="#/widget-image" class="pull-left anchorTag">Image</a>
+                    <a href ng-click="model.createWidget('IMAGE')" class="pull-left anchorTag">Image</a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-11 col-sm-12 col-md-12 col-lg-12">
-                    <a href="#/widget-youtube" class="pull-left anchorTag">YouTube</a>
+                    <a href ng-click="model.createWidget('YOUTUBE')" class="pull-left anchorTag">YouTube</a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-11 col-sm-12 col-md-12 col-lg-12">
-                    <a href="#/page-list" class="pull-left anchorTag">Data Table</a>
+                    <p class="pull-left anchorTag">Data Table</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-11 col-sm-12 col-md-12 col-lg-12">
-                    <a href="#/page-list" class="pull-left anchorTag">Repeater</a>
+                    <p class="pull-left anchorTag">Repeater</p>
                 </div>
             </div>
         </div>
@@ -90,12 +80,10 @@
                 </div>
                 <div class="col-xs-2 col-sm-1 col-md-1 col-lg-1">
                     <p class="navbar-text pull-right">
-                        <a href="#/profile"><span class="glyphicon glyphicon-user"></span></a>
+                        <a href="#/user/{{model.user_Id}}"><span class="glyphicon glyphicon-user"></span></a>
                     </p>
                 </div>
             </div>
         </div>
     </nav>
 </div>
-</body>
-</html>

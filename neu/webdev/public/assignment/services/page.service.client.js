@@ -53,7 +53,7 @@
         function findPageById(pageId) {
             for (var p in pages) {
                 page = pages[p];
-                if(page._id === pageId) {
+                if(page._id.toString() === pageId.toString()) {
                     return page;
                 }
             }
@@ -64,12 +64,13 @@
         function updatePage(pageId, page) {
             flag =0;
             for (var p in pages) {
-                pg=pages[p];
-                if(pg._id === pageId) {
-                    flag=1;
+                pg = pages[p];
+                if(pg._id.toString() === pageId.toString()) {
+                    flag = 1;
                     pg.name=page.name;
                     pg.description=page.description;
                     pg.websiteId=page.websiteId;
+                    break;
                 }
             }
             if (flag===1)
@@ -79,12 +80,12 @@
 
         function deletePage(pageId) {
             for(var i=0;i<pages.length;i++) {
-                if (pages[i]._id === pageId) {
-                    users.splice(i , 1);
-                    return users;
+                if (pages[i]._id.toString() === pageId.toString() ) {
+                    pages.splice(i , 1);
+                    return 1;
                 }
             }
-
+            return 0;
         }
     }
 })();

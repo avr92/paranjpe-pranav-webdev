@@ -38,8 +38,7 @@
         </div>
     </div>
 </div>-->
-<!--{{model.website_Id}}
-{{model.user_Id}}-->
+
 <div class="container-fluid">
     <div class="container-fluid">
         <div ng-repeat="widget in model.widgets" class="row rel-pos">
@@ -71,12 +70,12 @@
                     <img width="{{widget.width}}" src="{{widget.url}}">
                 </div>
                 <div ng-switch-when="YOUTUBE" class="col-xs-11 img-rounded">
-                    <iframe height="300" ng-src={{model.checkUrl(widget.url)}} width={{widget.width}}></iframe>
+                    <iframe height="300" ng-src="{{model.checkSafeUrl(widget.url)}} width={{widget.width}}"></iframe>
                 </div>
                 <div class="row">
                     <div class="col-xs-2 col-sm-2 col-mid-1 col-lg-1 col-xs-offset-10 col-sm-offset-10 col-mid-offset-11 col-lg-offset-11 setpostop">
                         <div class="pull-right bgstyle">
-                            <a href ng-click="model.editWidget(widget)" class="navbar-link"><span
+                            <a href ng-click="model.editWidget()" class="navbar-link"><span
                                     class="glyphicon glyphicon-cog"></span>
                             </a>
                             <span class="glyphicon glyphicon-align-justify"></span>

@@ -4,6 +4,7 @@
         .factory("WidgetService", WidgetService);
 
     function WidgetService() {
+
         var widgets = [
             { "_id": "123", "widgetType": "HEADER", "pageId": "321", "size": 2, "text": "GIZMODO"},
             { "_id": "234", "widgetType": "HEADER", "pageId": "321", "size": 4, "text": "Lorem ipsum"},
@@ -18,9 +19,29 @@
 
         var api = {
             findWidgetsForPage: findWidgetsForPage,
-            findWidgetById: findWidgetById
+            //findWidgetById: findWidgetById,
+            createWidget: createWidget,
+            findWidgetsByPageId:findWidgetsByPageId,
+            findWidgetById:findWidgetById,
+            updateWidget:updateWidget,
+            deleteWidget:deleteWidget
         };
         return api;
+
+
+        function createWidget(pageId,widget){
+            //console.log("inside createpage")
+            var createwidget=widget;
+
+                createwidget._id =Math.round(new Date().getTime() / 100000000);
+                //widgetType:widget.widgetType,
+                //size:widget.size,
+                //text:widget.text(),
+                createwidget.pageId=pageId;
+
+            widgets.push(createwidget);
+            return createwidget;
+        }
 
         function findWidgetById(wid) {
             for(var w in widgets) {
@@ -29,6 +50,50 @@
                 }
             }
             return null;
+        }
+
+        function findWidgetsByPageId(pageId){
+            res=[];
+            console.log("in");
+
+            for (var p in widgets) {
+                var widget = widgets[p];
+
+                if(widget.pageId.toString() === pageId.toString()) {
+                    //console.log("hello");
+
+                    res.push(widget);
+                }
+            }
+            console.log(res);
+            return res;
+        }
+
+        function updateWidget(widgetId, widget){
+            flag =0;
+            for (var p in widgets) {
+                pg=widgets[p];
+                if(widgets._id.toString() === widgetId.toString()) {
+                    flag=1;
+                    pg.size=widget.size;
+                    pg.text=widget.text;
+                }
+            }
+            if (flag===1)
+                return 1;
+            return 0;
+
+        }
+
+        function deleteWidget(widgetId){
+            for(var i=0;i<widgets.length;i++) {
+                if (widgets[i]._id.toString() === pageId.toString()) {
+                    widgets.splice(i , 1);
+                    return 1;
+                }
+            }
+            return 0;
+
         }
 
         function findWidgetsForPage(pid) {

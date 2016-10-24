@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-xs-10 col-sm-11 col-md-11 col-lg-11">
                     <p class="navbar-text pull-left">
-                        <a href="#/page-list">
+                        <a href="#/user/{{model.user_Id}}/website/{{model.websiteId}}/page">
                             <span class="glyphicon glyphicon-chevron-left "></span>
                         </a>
                     </p>
@@ -12,7 +12,7 @@
                 </div>
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
                     <p class="navbar-text pull-right">
-                        <a href="#/page-list">
+                        <a href ng-click="model.pageEdit()">
                             <span class="glyphicon glyphicon-ok"></span>
                         </a>
                     </p>
@@ -25,15 +25,15 @@
             <form>
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="" value="Blog Post">
+                    <input type="text" ng-model="model.currentpage.name" class="form-control" id="name" placeholder="">
                 </div>
                 <div class="form-group">
                     <label for="Title">Title</label>
-                    <input type="text" class="form-control" id="Title"
+                    <input type="text" ng-model="model.currentpage.description" class="form-control" id="Title"
                            placeholder="Page Title">
                 </div>
                 <a class="btn btn-danger  btn-block"
-                   href="#/page-list">Delete</a>
+                   href ng-click="model.pageDelete()">Delete</a>
             </form>
         </div>
     </div>
@@ -44,7 +44,7 @@
                 </div>
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
                     <p class="navbar-text pull-right">
-                        <a href="#/profile"><span class="glyphicon glyphicon-user"></span></a>
+                        <a href="#proflie" ><span class="glyphicon glyphicon-user"></span></a>
                     </p>
                 </div>
             </div>

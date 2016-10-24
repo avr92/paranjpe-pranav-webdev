@@ -44,27 +44,35 @@
         vm.websiteId = parseInt($routeParams.wid);
         vm.page_Id = parseInt($routeParams.pid)
         vm.user_Id = parseInt($routeParams.uid);
-        vm.websiteDelete=pageDelete;
-        vm.websiteEdit=pageEdit;
+        vm.pageDelete=pageDelete;
+        vm.pageEdit=pageEdit;
 
-        function pageDelete(page_Id){
-            var result=PageService.deletePage(page_Id);
+        vm.currentpage = PageService.findPageById(vm.page_Id);
+
+        function pageDelete(){
+
+            var result=PageService.deletePage(vm.page_Id);
+
             if(result==1){
-                $location.url("/user/"+vm.uid+"/website/"+vm.wid+"/page");
+                $location.url("/user/"+vm.user_Id+"/website/"+vm.websiteId+"/page");
             }
             else {
-                vm.error("Error");
+                console.log("Error");
             }
         }
 
-        function pageEdit(page_Id,page){
-            var res=PageService.updatePage(page_Id,page);
+        function pageEdit(){
+
+            var res=PageService.updatePage(vm.page_Id, vm.currentpage);
+
             if(res)
             {
-                $location.url("/user/"+vm.uid+"/website/"+vm.wid+"/page");
+                console.log(vm.user_Id);
+                console.log(vm.websiteId);
+                $location.url("/user/"+vm.user_Id+"/website/"+vm.websiteId+"/page");
             }
             else {
-                vm.error="error";
+                console.log("Error");
             }
         }
 
