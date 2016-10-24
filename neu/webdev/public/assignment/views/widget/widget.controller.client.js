@@ -54,7 +54,7 @@
     function NewWidgetController($routeParams,$location,WidgetService){
         var vm = this;
         vm.user_Id=$routeParams.uid;
-        vm.website_Id=$routeParams.wgid;
+        vm.website_Id=$routeParams.wid;
         vm.widget_Id=$routeParams.wgid;
         vm.page_Id=$routeParams.pid;
         vm.createYouTubeWid={"widgetType":"YOUTUBE","pageId":vm.page_Id,"width":"","url":""};
@@ -63,12 +63,12 @@
         vm.createWidget=createWidget;
 
         function createWidget(newWidgetType){
-            var wid={};
+            var wid=[];
             //w.widgetType=newWidgetType;
-            var newWidget=WidgetService.createWidget(vm.page_Id,w.newWidgetType);
+            var newWidget=WidgetService.createWidget(vm.page_Id,newWidgetType);
 
             if(newWidget){
-                $location.url("/user/"+vm.user_Id+"/website/"+vm.wid+"/page/"+vm.pid+"/widget/"+vm.wgid);
+                $location.url("/user/"+vm.user_Id+"/website/"+vm.website_Id+"/page/"+vm.page_Id+"/widget/"+vm.widget_Id);
             }
             else{
                 console.log("error");
