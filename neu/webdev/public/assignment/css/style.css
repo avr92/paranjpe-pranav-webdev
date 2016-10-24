@@ -45,7 +45,7 @@ body {
 }
 
 .vertical-divider {
-    height: 102%;
+    height: 82vh;
     border-right: 1px solid #cccccc;
     margin-top: -20px;
 }
