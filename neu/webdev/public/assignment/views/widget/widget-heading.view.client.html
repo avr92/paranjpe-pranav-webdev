@@ -22,20 +22,19 @@
         </div>
     </nav>
     <div class="container-fluid">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <form>
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" ng-model="model.widget.name" class="form-control" id="name" placeholder="Name">
-
+                    <input type="text" class="form-control" id="name" placeholder="Name">
                     <label for="Text">Text</label>
                     <input type="text" ng-model="model.widget.text" class="form-control" id="Text"
-                           placeholder="" value="US Senate Reaches Compromise on Emergency">
+                           placeholder="">
                     <label for="Size">Size</label>
-                    <input type="number" ng-model="model.widget.size" class="form-control" id="Size" placeholder="" value="3">
+                    <input type="number" ng-model="model.widget.size" class="form-control" id="Size" placeholder="Size">
                 </div>
-                <a class="btn btn-danger  btn-block"
-                   href ng-click="model.deleteWidget(model.widget)">Delete</a>
+                <a class="btn btn-danger btn-block"
+                   href ng-click="model.deleteWidget()">Delete</a>
             </form>
         </div>
     </div>

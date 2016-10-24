@@ -73,7 +73,7 @@
             flag =0;
             for (var p in widgets) {
                 pg=widgets[p];
-                if(widgets._id.toString() === widgetId.toString()) {
+                if(pg._id.toString() === widgetId.toString()) {
                     flag=1;
                     pg.size=widget.size;
                     pg.text=widget.text;
@@ -87,7 +87,7 @@
 
         function deleteWidget(widgetId){
             for(var i=0;i<widgets.length;i++) {
-                if (widgets[i]._id.toString() === pageId.toString()) {
+                if (widgets[i]._id.toString() === widgetId.toString()) {
                     widgets.splice(i , 1);
                     return 1;
                 }
