@@ -11,7 +11,14 @@
         function init() {
             vm.user_Id=$routeParams['uid'];
             vm.websiteId=$routeParams['wid'];
-            vm.pages = PageService.findPageByWebsiteId(vm.websiteId);
+            console.log(": "+vm.websiteId+"::"+vm.user_Id);
+            //vm.pages = PageService.findPageByWebsiteId(vm.websiteId);
+            var promise = PageService.findPageByWebsiteId(vm.websiteId);
+            promise
+                .success(function(pages){
+                    vm.pages = pages;
+                    console.log(vm.pages);
+                });
             console.log("in controler" + vm.pages);
         }
         init();
@@ -23,17 +30,38 @@
         vm.websiteId=$routeParams['wid'];
         vm.createNewPage=createNewPage;
 
+        // function init() {
+        //     var promise = PageService.findWebsitesForUser(vm.user_Id);
+        //     promise
+        //         .success(function(websites){
+        //             vm.websites = websites;
+        //         });
+        // }
+        // init();
+
         function createNewPage(page){
-            var result=PageService.createPage(vm.websiteId,page);
-            if(result){
-                console.log("Inside");
-                console.log(vm.user_Id);
-                console.log(vm.websiteId);
-                $location.url("/user/"+vm.user_Id+"/website/"+vm.websiteId+"/page");
+            if(page!=null) {
+                page._id = Math.round(new Date().getTime() / 10000000000);
+                page.websiteId = vm.websiteId;
+                PageService
+                    .createPage(vm.websiteId, page)
+                    .success(function () {
+                        $location.url("/user/" + vm.user_Id + "/website/" + vm.websiteId + "/page");
+                    })
+                    .error(function(){
+                        console.log("error");
+                    });
             }
-            else {
-                vm.error="Error";
-            }
+            // var result=PageService.createPage(vm.websiteId,page);
+            // if(result){
+            //     console.log("Inside");
+            //     console.log(vm.user_Id);
+            //     console.log(vm.websiteId);
+            //     $location.url("/user/"+vm.user_Id+"/website/"+vm.websiteId+"/page");
+            // }
+            // else {
+            //     vm.error="Error";
+            // }
         }
 
 
@@ -48,17 +76,37 @@
         vm.pageEdit=pageEdit;
 
         vm.currentpage = PageService.findPageById(vm.page_Id);
+        console.log(vm.currentpage);
+
+
+        function init() {
+            var promise = PageService.findPageById(vm.page_Id);
+            promise
+                .success(function(page){
+                    vm.currentpage = page;
+                });
+            // var promise = WebsiteService.findWebsitesForUser(vm.user_Id);
+            // promise
+            //     .success(function(websites){
+            //         vm.websites = websites;
+            //     });
+        }
+        init();
+
 
         function pageDelete(){
-
-            var result=PageService.deletePage(vm.page_Id);
-
-            if(result==1){
-                $location.url("/user/"+vm.user_Id+"/website/"+vm.websiteId+"/page");
-            }
-            else {
-                console.log("Error");
-            }
+            console.log(vm.page_Id);
+            var promise = PageService.deletePage(vm.page_Id);
+            promise
+                .success(function(res){
+                    if(res!='0') {
+                        console.log("inside delete");
+                        $location.url("/user/" + vm.user_Id + "/website/" + vm.websiteId + "/page");
+                    }
+                })
+                .error(function(err){
+                    console.log("error");
+                });
         }
 
         function pageEdit(){
