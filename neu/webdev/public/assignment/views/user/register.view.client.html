@@ -1,5 +1,8 @@
 <div class="container">
     <h1>Register</h1>
+    <div ng-show="model.error" class="alert alert-danger" role="alert">
+        {{model.error}}
+    </div>
     <input type="text"
            ng-model="model.user.username"
            class="form-control"
@@ -9,6 +12,7 @@
            class="form-control"
            placeholder="password"/>
     <input type="password"
+           ng-model="model.user.verifypassword"
            class="form-control"
            placeholder="verify password"/>
     <!--<a class="btn btn-primary btn-block"
