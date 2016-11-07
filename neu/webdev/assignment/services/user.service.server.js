@@ -47,6 +47,7 @@ module.exports=function(app){
             if(user.username === username && user.password === password ) {
                 console.log("credentials");
                 res.send(user);
+                return;
             }
         }
         console.log("credentials1");
@@ -59,6 +60,7 @@ module.exports=function(app){
             user = users[u];
             if(user.username === username) {
                 res.send(users[u]);
+                return;
             }
         }
         res.send('0');
