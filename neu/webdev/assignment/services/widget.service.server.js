@@ -42,8 +42,9 @@ module.exports = function(app) {
          }
         }
         console.log([user_Id,website_Id,page_Id,widgetId]);
-
-        res.redirect("/assignment/#user/"+user_Id+"/website"+website_Id+"/page"+page_Id+"/widget"+widgetId);
+        var redirectUrl = "/assignment/#user/"+user_Id+"/website/"+website_Id+"/page/"+page_Id+"/widget/"+widgetId;
+        console.log(redirectUrl);
+        res.redirect(redirectUrl);
     }
 
     function updatelist(req,res){

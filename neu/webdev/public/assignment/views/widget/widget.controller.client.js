@@ -65,16 +65,17 @@
             vm.widget_Id=$routeParams.wgid;
             vm.page_Id=$routeParams.pid;
             vm.createYouTubeWid={"widgetType":"YOUTUBE","pageId":vm.page_Id,"width":"","url":""};
-            vm.createHeaderWid={"widgetType":"HEADER","text":"","size":4,"pageId":vm.page_Id};
+            vm.createHeaderWid={"_id":0,"widgetType":"HEADER","text":"","size":4,"pageId":vm.page_Id};
             vm.createImageWid={"widgetType": "IMAGE", "pageId": vm.page_Id, "width": "", "url": ""};
         }
         init();
 
         function createWidget(newWidgetType){
             var wid=[];
-            newWidgetType._id =Math.round(new Date().getTime() / 100000000);
+            newWidgetType._id =parseInt(new Date().getTime().toString());
             newWidgetType.pageId=vm.page_Id;
             //w.widgetType=newWidgetType;
+
             WidgetService
                 .createWidget(vm.page_Id,newWidgetType)
                 .success(function(){

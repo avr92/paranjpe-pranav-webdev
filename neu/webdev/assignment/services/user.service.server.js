@@ -66,7 +66,7 @@ module.exports=function(app){
 
     function createUser(req,res){
         var usr = req.body;
-        usr._id=Math.round(new Date().getTime() / 100000000);
+        usr._id=Math.round(new Date().getTime() / 100);
         console.log(usr);
         var len=users.length;
         users.push(usr);

@@ -44,6 +44,7 @@
         vm.register=register;
 
         function register(user) {
+
             var promise = UserService.createUser(user);
             promise
                 .success(function(user){
