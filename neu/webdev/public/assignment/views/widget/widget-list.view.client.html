@@ -74,14 +74,13 @@
                     <iframe height="300" ng-src={{model.checkUrl(widget.url)}} width={{widget.width}}></iframe>
                 </div>
                 <div ng-switch-when="INPUT" class="col-xs-11 img-rounded ">
-
                     <div ng-if="widget.formatted" text-angular
                          ta-toolbar="[['h1','h2','h3'],['bold','italics','underline','strikeThrough'],
         ['ul','ol'],['justifyLeft','justifyCenter','justifyRight','justifyFull'],
         ['indent','outdent'],['html']]" ng-model="widget.text"></div>
                     <input ng-if="!widget.formatted && (!widget.rows ||widget.rows===1)"
                            placeholder="{{widget.textInput.placeholder}}" class="form-control" ng-model="widget.text"/>
-                    <textarea ng-if="!widget.formatted && (!widget.rows > 1)"
+                    <textarea ng-if="!widget.formatted && (widget.rows > 1)"
                               rows="{{widget.rows}}" placeholder="{{widget.placeholder}}"
                               class="form-control" >{{widget.text}}</textarea>
                 </div>

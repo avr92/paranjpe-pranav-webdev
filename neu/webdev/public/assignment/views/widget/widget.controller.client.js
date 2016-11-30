@@ -148,8 +148,8 @@
         }
 
         function updateWidget(newWidget) {
-            console.log("pp");
-            console.log(newWidget);
+            //console.log("pp");
+            console.log(newWidget.placeholder);
             if(validateWidgetType(newWidget.type)){
                 switch(vm.newWidget.type){
                     case "HEADING":
@@ -168,12 +168,12 @@
             }
             else
             {
-                console.log("inside else");
+                //console.log("inside else");
                 WidgetService
                     .updateWidget(vm.widget_Id, newWidget)
                     .success(function (res) {
                         if (res != '0') {
-                            console.log("/user/" + newWidget.width);
+                            //console.log("/user/" + newWidget.width);
                             $location.url("/user/" + vm.user_Id + "/website/" + vm.website_Id + "/page/" + vm.page_Id + "/widget");
                         }
                     })
