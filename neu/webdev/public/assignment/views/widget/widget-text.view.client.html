@@ -1,0 +1,58 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-10 col-sm-11 col-md-11 col-lg-11">
+                <p class="navbar-text pull-left">
+                    <a href="#/user/{{model.user_Id}}/website/{{model.website_Id}}/page/{{model.page_Id}}/widget">
+                        <span class="glyphicon glyphicon-chevron-left "></span>
+                    </a>
+                </p>
+                <span class="navbar-brand">Widget Edit</span>
+            </div>
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                <p class="navbar-text pull-right">
+                    <a href ng-click="model.updateWidget(model.widget)">
+                        <span class="glyphicon glyphicon-ok"></span>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div ng-show="model.error" class="alert alert-danger" role="alert">
+        {{model.error}}
+    </div>
+    <form>
+        <div class="form-group">
+            <label for="widgetName">Name</label>
+                <input type="text" id="widgetName" class="form-control" ng-model="model.widget.name" placeholder="widget name"/>
+            <label for="widgetText">Text</label>
+            <input type="text" id="widgetText" class="form-control" ng-model="model.widget.text" placeholder="text"/>
+            <label for="widgetRows">Rows</label>
+            <input type="text" id="widgetRows" class="form-control" ng-model="model.widget.rows"/>
+            <label for="widgetPlaceholder">Placeholder</label>
+            <input type="text" id="widgetPlaceholder" class="form-control" ng-model="model.widget.placeholder" />
+            <label for="widgetFormatted">Formatted</label>
+            <input type="checkbox" id="widgetFormatted" ng-model="model.widget.formatted"/>
+        </div>
+        <div class="form-group">
+            <button ng-click="model.deleteWidget()" class="btn btn-danger btn-block">Delete</button>
+        </div>
+    </form>
+</div>
+
+<nav class="bg-primary navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-10 col-sm-11 col-md-11 col-lg-11">
+            </div>
+            <div class="col-xs-2 col-sm-1 col-md-1 col-lg-1">
+                <p class="navbar-text pull-right">
+                    <a href="#/user/{{model.user_Id}}"><span class="glyphicon glyphicon-user"></span></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</nav>

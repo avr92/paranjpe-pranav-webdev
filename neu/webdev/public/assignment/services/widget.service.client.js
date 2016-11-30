@@ -29,17 +29,19 @@
         };
         return api;
 
-        function sort(start,end,pageId){
+        function sort(pageId,start,end){
             var url="/api/page/"+pageId+"/widget?start=START&end=END";
             url=url.replace("START",start)
                 .replace("END",end);
-            $http.put(url);
+            return $http.put(url);
         }
 
 
         function createWidget(pageId,widget){
             //console.log("inside createpage")
-            var createwidget=widget;
+            var newwidget=widget;
+            newwidget.pageId=pageId;
+            console.log("client side");
 
                 //createwidget._id =Math.round(new Date().getTime() / 100000000);
                 //widgetType:widget.widgetType,
@@ -50,7 +52,8 @@
             //widgets.push(createwidget);
             //return createwidget;
             var url = "/api/page/"+pageId+"/widget";
-            return $http.post(url, widget);
+            console.log(url);
+            return $http.post(url, newwidget);
         }
 
         function findWidgetById(wid) {

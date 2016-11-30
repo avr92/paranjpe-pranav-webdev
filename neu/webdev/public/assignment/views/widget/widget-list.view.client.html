@@ -42,9 +42,9 @@
 {{model.user_Id}}-->
 <div class="container-fluid">
     <div id="sort"sortable class="container-fluid">
-        <div ng-repeat="widget in model.widgets" class="row rel-pos">
-            <div ng-switch="widget.widgetType">
-                <div class="col-xs-11" ng-switch-when="HEADER" ng-switch="widget.size">
+        <div ng-repeat="widget in model.widgets|orderBy :'order'"  class="row rel-pos">
+            <div ng-switch="widget.type">
+                <div class="col-xs-11" ng-switch-when="HEADING" ng-switch="widget.size">
                     <div ng-switch-when="1">
                         <h1>{{widget.text}}</h1>
                     </div>
@@ -55,7 +55,7 @@
                         <h3>{{widget.text}}</h3>
                     </div>
                     <div ng-switch-when="4">
-                        <h4>{{widget.text}}</h4>
+                        <h4>{{widget.text}} </h4>
                     </div>
                     <div ng-switch-when="5">
                         <h5>{{widget.text}}</h5>
@@ -70,8 +70,20 @@
                 <div ng-switch-when="IMAGE" class="col-xs-11 img-rounded">
                     <img width="{{widget.width}}" src="{{widget.url}}">
                 </div>
-                <div ng-switch-when="YOUTUBE" class="col-xs-11 img-rounded">
+                <div ng-switch-when="YOUTUBE" class="col-xs-11 img-rounded youtube-widget">
                     <iframe height="300" ng-src={{model.checkUrl(widget.url)}} width={{widget.width}}></iframe>
+                </div>
+                <div ng-switch-when="INPUT" class="col-xs-11 img-rounded ">
+
+                    <div ng-if="widget.formatted" text-angular
+                         ta-toolbar="[['h1','h2','h3'],['bold','italics','underline','strikeThrough'],
+        ['ul','ol'],['justifyLeft','justifyCenter','justifyRight','justifyFull'],
+        ['indent','outdent'],['html']]" ng-model="widget.text"></div>
+                    <input ng-if="!widget.formatted && (!widget.rows ||widget.rows===1)"
+                           placeholder="{{widget.textInput.placeholder}}" class="form-control" ng-model="widget.text"/>
+                    <textarea ng-if="!widget.formatted && (!widget.rows > 1)"
+                              rows="{{widget.rows}}" placeholder="{{widget.placeholder}}"
+                              class="form-control" >{{widget.text}}</textarea>
                 </div>
                 <div class="row">
                     <div class="col-xs-2 col-sm-2 col-mid-1 col-lg-1 col-xs-offset-10 col-sm-offset-10 col-mid-offset-11 col-lg-offset-11 setpostop">

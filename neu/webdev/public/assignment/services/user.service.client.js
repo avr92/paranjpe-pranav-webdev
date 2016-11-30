@@ -118,12 +118,14 @@
         }
 
         function deleteUser(userId) {
-            for(var i=0;i<users.length;i++) {
-                if (users[i]._id === userId) {
-                    users.splice(i , 1);
-                    return users;
-                }
-            }
+            // for(var i=0;i<users.length;i++) {
+            //     if (users[i]._id === userId) {
+            //         users.splice(i , 1);
+            //         return users;
+            //     }
+            // }
+            var url="/api/user/"+userId;
+            return $http.delete(url,userId);
 
         }
 

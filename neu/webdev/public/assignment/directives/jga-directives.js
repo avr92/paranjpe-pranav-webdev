@@ -28,16 +28,16 @@
             controller:sortableController,
             controllerAs:'sortableController'
         }
-        console.log("nothing to do here");
+        //console.log("nothing to do here");
     }
 
     function sortableController(WidgetService,$routeParams){
         var vm=this;
         vm.page_Id=$routeParams.pid;
-        var a=vm.page_Id
+        var pid=vm.page_Id
         vm.sort=sort;
-        function sort(start,end,a){
-            WidgetService.sort(start,end);
+        function sort(start,end){
+            WidgetService.sort(pid,start,end);
             console.log([start,end]);
         }
     }

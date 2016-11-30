@@ -11,15 +11,16 @@
         function init() {
             vm.user_Id=$routeParams['uid'];
             vm.websiteId=$routeParams['wid'];
-            console.log(": "+vm.websiteId+"::"+vm.user_Id);
+            //console.log(": "+vm.websiteId+"::"+vm.user_Id);
             //vm.pages = PageService.findPageByWebsiteId(vm.websiteId);
             var promise = PageService.findPageByWebsiteId(vm.websiteId);
             promise
                 .success(function(pages){
                     vm.pages = pages;
-                    console.log(vm.pages);
+                    //console.log(vm.pages);
+                    console.log("in controler" + vm.pages);
                 });
-            console.log("in controler" + vm.pages);
+
         }
         init();
     }
@@ -41,8 +42,8 @@
 
         function createNewPage(page){
             if(page!=null) {
-                page._id = Math.round(new Date().getTime() / 10000000000);
-                page.websiteId = vm.websiteId;
+                //page._id = Math.round(new Date().getTime() / 10000000000);
+                //page.websiteId = vm.websiteId;
                 PageService
                     .createPage(vm.websiteId, page)
                     .success(function () {
@@ -69,9 +70,9 @@
 
     function EditPageController($location, PageService,$routeParams) {
         var vm=this;
-        vm.websiteId = parseInt($routeParams.wid);
-        vm.page_Id = parseInt($routeParams.pid)
-        vm.user_Id = parseInt($routeParams.uid);
+        vm.websiteId = $routeParams.wid;
+        vm.page_Id = $routeParams.pid;
+        vm.user_Id = $routeParams.uid;
         vm.pageDelete=pageDelete;
         vm.pageEdit=pageEdit;
 

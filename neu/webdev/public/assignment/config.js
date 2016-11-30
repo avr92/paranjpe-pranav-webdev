@@ -82,6 +82,11 @@
             .when("/website/:wid", {
                 templateUrl: "views/website/website-edit.html"
             })
+            .when("/user/:uid/website/:wid/page/:pid/widget/:wgid/flickr",{
+                templateUrl: "views/widget/widget-flickr-search.view.client.html",
+                controller: "FlickrImageSearchController",
+                controllerAs: "model"
+            })
             .otherwise({
                 redirectTo: "/home"
             });

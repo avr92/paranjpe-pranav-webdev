@@ -8,7 +8,7 @@
     function WebsiteListController($routeParams, WebsiteService) {
         var vm = this;
 
-        vm.user_Id = parseInt($routeParams['uid']);
+        vm.user_Id = $routeParams['uid'];
 
         function init() {
             var promise = WebsiteService.findWebsitesForUser(vm.user_Id);
@@ -22,8 +22,8 @@
 
     function WebsiteEditController($routeParams,$location, WebsiteService) {
         var vm = this;
-        vm.website_Id = parseInt($routeParams.wid);
-        vm.user_Id = parseInt($routeParams.uid);
+        vm.website_Id = $routeParams.wid;
+        vm.user_Id = $routeParams.uid;
         vm.websiteDelete=websiteDelete;
         vm.websiteEdit=websiteEdit;
         function websiteEdit(website) {
@@ -123,8 +123,8 @@
         init();
         function websiteCreate(website) {
             if(website != null){
-                website._id = Math.round(new Date().getTime() / 10000000000);
-                website.uid = vm.user_Id;
+                //website._id = Math.round(new Date().getTime() / 10000000000);
+                //website.uid = vm.user_Id;
                 WebsiteService
                     .createWebsite(vm.user_Id, website)
                     .success(function () {

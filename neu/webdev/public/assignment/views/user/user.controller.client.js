@@ -55,7 +55,8 @@
                         if (user === '0') {
                             vm.error = "No such user";
                         } else {
-                            console.log(user._id);
+
+                            //console.log('NewUser: '+user);
                             $location.url("/user/" + user._id);
                         }
                     })
@@ -76,7 +77,7 @@
         }
     }
 
-    function ProfileController($routeParams, UserService) {
+    function ProfileController($routeParams, UserService,$location) {
         var vm = this;
         //var usrid=parseInt($routeParams.uid);
         // vm.updateprofile=updateprofile;
@@ -86,10 +87,10 @@
         //     vm.message ="Successfully updated!";
         // }
 
-        var userId = parseInt($routeParams.uid);
+        var userId = $routeParams.uid;
         var user = UserService.findUserById(userId);
-        console.log("fdsfv" + userId);
-        console.log(user);
+        //console.log("fdsfv" + userId);
+        //console.log(user);
         vm.updateprofile = updateprofile;
         vm.unregisterUser = unregisterUser;
 
@@ -119,7 +120,7 @@
 
         function unregisterUser() {
             UserService
-                .unregisterUser(vm.user._id)
+                .deleteUser(vm.user._id)
                 .success(function () {
                     $location.url("/login");
                 })
