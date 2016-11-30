@@ -45,7 +45,7 @@
 
         function editWidget(w) {
             //console.log(w.widgetType);
-            if (w.type === "YOUTUBE" || w.type === "IMAGE" || w.type === "HEADING"||w.type === "INPUT")
+            if (w.type === "YOUTUBE" || w.type === "IMAGE" || w.type === "HEADING"||w.type === "INPUT"||w.type === "HTML")
                 $location.url("/user/" + vm.user_Id + "/website/" + vm.website_Id + "/page/" + vm.page_Id + "/widget/" + w._id);
             else {
                 $location.url("/user/" + vm.user_Id + "/website/" + vm.website_Id + "/page/" + vm.page_Id + "/widget");
