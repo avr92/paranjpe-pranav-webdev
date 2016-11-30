@@ -39,8 +39,9 @@ module.exports=function () {
                 _id:userId
             },
             {
-                firstName:user.firstName,
-                lastName:user.lastName
+                $set:user
+                //firstName:user.firstName,
+                //lastName:user.lastName
             }
         );
     }

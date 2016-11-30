@@ -114,8 +114,14 @@
         init();
 
         function updateprofile() {
-            console.log("inside update");
-            UserService.updateUser(userId, vm.user);
+            if(vm.user.username !=""){
+                console.log("inside update");
+                UserService.updateUser(userId, vm.user)
+                    .then(function(success){vm.success="Updated"},function(error){vm.error="error"});
+            }
+            else
+                vm.error="Not blank";
+
         }
 
         function unregisterUser() {

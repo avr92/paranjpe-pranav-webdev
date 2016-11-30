@@ -113,7 +113,7 @@
             // return 0;
             console.log("inside update2");
             var url = "/api/user/" + user._id;
-            $http.put(url, user);
+            return $http.put(url, user);
 
         }
 
